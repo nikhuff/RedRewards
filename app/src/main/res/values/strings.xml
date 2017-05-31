@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Red Rewards</string>
+    <string name="welcomeMessage">Welcome, Red Rewards User!</string>
 </resources>
