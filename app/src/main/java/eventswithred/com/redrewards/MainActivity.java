@@ -7,6 +7,7 @@ public class MainActivity extends AppCompatActivity {
 
     /*we need to add more code here*/
     // I think we can submit it as is
+    //are you sure about that?
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
