@@ -6,11 +6,6 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
     /*we need to add more code here*/
-    // I think we can submit it as is
-    //are you sure about that?
-    // Mine is the best comment
-    //never has such a time come. time to call "hello world"
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
