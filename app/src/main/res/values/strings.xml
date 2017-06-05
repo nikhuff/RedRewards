@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">RED Rewards</string>
     <string name="welcomeMessage">Welcome, R.E.D. Rewards User!</string>
+    <string name="title_activity_social_feeder">SocialFeeder</string>
 </resources>
