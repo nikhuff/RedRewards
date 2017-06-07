@@ -24,12 +24,13 @@
         <activity
             android:name=".SocialFeeder"
             android:label="@string/title_activity_social_feeder"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="eventswithred.com.redrewards.MainActivity" />
+                android:value="eventswithred.com.redrewards.LoginActivity" />
         </activity>
+        <activity android:name=".StoreActivity"></activity>
     </application>
 
 </manifest>
