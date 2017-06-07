@@ -16,4 +16,5 @@
         completions."
     </string>
     <string name="title_activity_social_feeder">SocialFeeder</string>
+    <string name="btnBypassLogin" >Bypass the login (temporary button)</string>
 </resources>
