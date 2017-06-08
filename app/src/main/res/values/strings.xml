@@ -23,4 +23,11 @@
     </string>
     <string name="title_activity_social_feeder">SocialFeeder</string>
     <string name="btnBypassLogin" >Bypass the login (temporary button)</string>
+
+    <string name="Twitter_all_caps">TWITTER</string>
+    <string name="Twitter_lower">Twitter</string>
+    <string name="Facebook_all_caps">FACEBOOK</string>
+    <string name="Facebook_lower">Facebook</string>
+    <string name="Facebook_FB">FB</string>
+
 </resources>
