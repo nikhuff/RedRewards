@@ -3,6 +3,7 @@ package eventswithred.com.redrewards;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -198,6 +199,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
         return password.length() > 4;
+    }
+
+    public void login(View view) {
+        Intent intent = new Intent(this, SocialFeeder.class);
+        startActivity(intent);
     }
 
     /**
