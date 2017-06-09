@@ -30,7 +30,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eventswithred.com.redrewards.LoginActivity" />
         </activity>
-        <activity android:name=".StoreActivity"></activity>
+        <activity android:name=".StoreActivity" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
