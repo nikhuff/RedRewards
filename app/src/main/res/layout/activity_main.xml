@@ -6,44 +6,58 @@
     android:layout_height="match_parent"
     tools:context="eventswithred.com.redrewards.MainActivity">
 
-   <!-- <fragment
-        android:id="@+id/fragment"
-        android:name="android.support.v7.app.AppCompatDialogFragment"
+    <LinearLayout
+        android:id="@+id/fragmentContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/tabLayout"
+        app:layout_constraintLeft_toLeftOf="@+id/space"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/space">
+
+        <fragment
+            android:id="@+id/socialFeeds"
+            android:name="eventswithred.com.redrewards.SocialFeeder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:tag="SocialFeeds" />
+
+        <fragment
+            android:id="@+id/store"
+            android:name="eventswithred.com.redrewards.StoreActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:tag="Store" />
+
+        <fragment
+            android:id="@+id/points"
+            android:name="eventswithred.com.redrewards.PointsActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:tag="Points" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintBottom_toTopOf="@+id/tabLayout"
-        tools:layout="@layout/activity_social_feeder" />-->
-
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintBottom_toTopOf="@+id/tabLayout" />
+        android:id="@+id/space" />
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="389dp"
         android:layout_height="47dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
         android:background="@color/altColorPrimary"
         android:theme="@style/REDAppTheme"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -51,14 +65,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:tabIndicatorColor="@color/altColorAccent"
         app:tabSelectedTextColor="@color/altColorAccent"
-        app:tabTextColor="@color/altColorAccent"
-        tools:layout_editor_absoluteY="464dp">
+        app:tabTextColor="@color/altColorAccent">
 
         <android.support.design.widget.TabItem
-            android:id="@+id/StoreTab"
+            android:id="@+id/FeedTab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_activity_store"
+            android:text="@string/feedString"
             android:visibility="visible" />
 
         <android.support.design.widget.TabItem
@@ -70,10 +83,10 @@
             android:theme="@style/REDAppTheme" />
 
         <android.support.design.widget.TabItem
-            android:id="@+id/FeedTab"
+            android:id="@+id/StoreTab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="feed" />
+            android:text="@string/storeString" />
     </android.support.design.widget.TabLayout>
 
 </android.support.constraint.ConstraintLayout>

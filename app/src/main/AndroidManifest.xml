@@ -23,17 +23,13 @@
             </intent-filter>
         </activity>
 
-        <activity
+        <fragment
             android:name=".SocialFeeder"
             android:label="@string/title_activity_social_feeder"
-            android:parentActivityName=".LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="eventswithred.com.redrewards.LoginActivity" />
-        </activity>
+            android:theme="@style/REDAppTheme">
+        </fragment>
 
-        <activity android:name=".StoreActivity" />
+        <fragment android:name=".StoreActivity" />
 
         <activity android:name=".LoginActivity"></activity>
     </application>

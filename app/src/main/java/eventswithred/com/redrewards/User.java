@@ -1,5 +1,6 @@
 package eventswithred.com.redrewards;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,6 +12,13 @@ public class User {
     private String userID;
     private int points;
     public List<SocialAccount> socialAccountList;
+
+    User(String userName, String userID) {
+        this.userName = userName;
+        this.userID = userID;
+        points = 0;
+        socialAccountList = new ArrayList<>();
+    }
 
     public String getUserName() {
         return userName;
