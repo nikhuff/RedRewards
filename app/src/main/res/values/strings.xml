@@ -33,5 +33,9 @@
     <string name="Facebook_all_caps">FACEBOOK</string>
     <string name="Facebook_lower">Facebook</string>
     <string name="Facebook_FB">FB</string>
+    <string name="title_activity_content_switcher">content_switcher</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 </resources>
