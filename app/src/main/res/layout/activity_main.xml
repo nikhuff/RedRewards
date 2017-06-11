@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context="eventswithred.com.redrewards.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
+
     <LinearLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="0dp"
@@ -42,22 +54,28 @@
             android:tag="Points" />
 
     </LinearLayout>
-
     <Space
+        android:id="@+id/space"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintBottom_toTopOf="@+id/tabLayout"
-        android:id="@+id/space" />
+        app:layout_constraintBottom_toTopOf="@+id/tabLayout" />
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="389dp"
         android:layout_height="47dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
         android:background="@color/altColorPrimary"
         android:theme="@style/REDAppTheme"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -65,7 +83,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:tabIndicatorColor="@color/altColorAccent"
         app:tabSelectedTextColor="@color/altColorAccent"
-        app:tabTextColor="@color/altColorAccent">
+        app:tabTextColor="@color/altColorAccent"
+        tools:layout_editor_absoluteY="464dp">
 
         <android.support.design.widget.TabItem
             android:id="@+id/FeedTab"
@@ -79,7 +98,7 @@
             style="@style/REDAppTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="points"
+            android:text="@string/Points"
             android:theme="@style/REDAppTheme" />
 
         <android.support.design.widget.TabItem

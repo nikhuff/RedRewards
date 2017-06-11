@@ -18,7 +18,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- RED application theme. -->
-    <style name="REDAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">s
+    <style name="REDAppTheme" parent="Theme.AppCompat.Light.NoActionBar">s
         <item name="colorPrimary">@color/altColorPrimary</item>
         <item name="colorPrimaryDark">@color/altColorPrimaryDark</item>
      <!--   <item name="colorAccent">@color/altColorAccent</item> -->
