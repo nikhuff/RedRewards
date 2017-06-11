@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "86692851713",
+    "firebase_url": "https://redrewards-6262b.firebaseio.com",
+    "project_id": "redrewards-6262b",
+    "storage_bucket": "redrewards-6262b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86692851713:android:4a38597481f8451a",
+        "android_client_info": {
+          "package_name": "eventswithred.com.redrewards"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86692851713-376gfe7ok9dpmcp2lrbmh9d26l263le6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmMQhIrtFZD2LNm1K42LFVbBl7crRqzKE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
