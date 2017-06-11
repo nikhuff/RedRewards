@@ -3,6 +3,10 @@
     <string name="welcomeMessage">Welcome, R.E.D. Rewards User!</string>
     <string name="title_activity_store">StoreActivity</string>
 
+    <string name="feedString">Feed</string>
+    <string name="pointsString">Points</string>
+    <string name="storeString">Store</string>
+
     <string name="action_settings">Settings</string>
     <string name="storeWelcome">Welcome to the R.E.D. rewards store!</string>
     <string name="storeDescription">Exchange points for merch</string>
