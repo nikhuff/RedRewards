@@ -14,8 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context="eventswithred.com.redrewards.SocialFeeder"
-            tools:showIn="@layout/activity_social_feeder">
+            tools:context="eventswithred.com.redrewards.SocialMediaTabFragment"
+            tools:showIn="@layout/social_media_tab_fragment">
 
             <android.support.constraint.Guideline
                 android:layout_width="wrap_content"

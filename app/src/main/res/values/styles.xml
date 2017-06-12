@@ -21,6 +21,7 @@
     <style name="REDAppTheme" parent="Theme.AppCompat.Light.NoActionBar">s
         <item name="colorPrimary">@color/altColorPrimary</item>
         <item name="colorPrimaryDark">@color/altColorPrimaryDark</item>
+        <item name="android:colorAccent">@color/altColorAccent</item>
      <!--   <item name="colorAccent">@color/altColorAccent</item> -->
     </style>
 
