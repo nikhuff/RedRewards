@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Menu icons are inflated just as they were with actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

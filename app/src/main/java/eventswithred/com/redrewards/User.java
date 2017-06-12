@@ -13,7 +13,7 @@ public class User {
     private int points;
     public List<SocialAccount> socialAccountList;
 
-    User(String userName, String userID) {
+    User() {
         this.userName = userName;
         this.userID = userID;
         points = 0;
