@@ -3,9 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_favorite"
-        android:icon="@mipmap/music_request_icon"
+        android:id="@+id/settings_button"
+        android:icon="@drawable/ic_settings"
         android:title="@string/top_bar_test_button"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/top_bar_logo"
+        android:icon="@drawable/logo_wide"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/login_button"
+        android:icon="@drawable/ic_login"
+        android:title="top_bar_login_button"
         app:showAsAction="always"/>
 
 </menu>

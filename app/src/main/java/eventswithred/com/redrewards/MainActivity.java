@@ -8,6 +8,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.util.Log;
+
+import static android.R.attr.tag;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,9 +18,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar top_menu_bar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(top_menu_bar);
         ActionBar ab = getSupportActionBar();
+        //ab.setLogo(R.drawable.logo_wide);
+        ab.setDisplayShowTitleEnabled(false);
+
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Feed"));
@@ -30,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -57,11 +65,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        /*if (id == R.id.) {
-            return true;
-        }*/
+        switch (item.getItemId()) {
+            case R.id.settings_button:
+                Log.d("userinteraction", "user pressed the settings button");
+                // User chose the "Settings" item, show the app settings UI...
+                return true;
 
-        return super.onOptionsItemSelected(item);
+            case R.id.login_button:
+                Log.d("userinteraction", "user pressed the login button");
+                // User chose the "Favorite" action, mark the current item
+                // as a favorite...
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 }
