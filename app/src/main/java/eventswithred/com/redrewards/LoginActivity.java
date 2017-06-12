@@ -202,7 +202,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     public void login(View view) {
-        Intent intent = new Intent(this, SocialFeeder.class);
+        Intent intent = new Intent(this, SocialMediaTabFragment.class);
         startActivity(intent);
     }
 

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+<android.support.constraint.ViewPager
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,8 +17,10 @@
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintTop_toTopOf="@+id/space"
+        android:layout_marginTop="-28dp"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:id="@+id/fragmentContainer"
@@ -34,24 +38,27 @@
 
         <fragment
             android:id="@+id/socialFeeds"
-            android:name="eventswithred.com.redrewards.SocialFeeder"
+            android:name="eventswithred.com.redrewards.SocialMediaTabFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:tag="SocialFeeds" />
+            android:tag="SocialFeeds"
+            tools:layout="@layout/social_media_tab_fragment" />
 
         <fragment
             android:id="@+id/store"
-            android:name="eventswithred.com.redrewards.StoreActivity"
+            android:name="eventswithred.com.redrewards.StoreTabFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:tag="Store" />
+            android:tag="Store"
+            tools:layout="@layout/store_tab_fragment" />
 
         <fragment
             android:id="@+id/points"
-            android:name="eventswithred.com.redrewards.PointsActivity"
+            android:name="eventswithred.com.redrewards.PointsTabFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:tag="Points" />
+            android:tag="Points"
+            tools:layout="@layout/point_tab_fragment" />
 
     </LinearLayout>
     <Space
@@ -98,7 +105,7 @@
             style="@style/REDAppTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Points"
+            android:text="@string/pointsString"
             android:theme="@style/REDAppTheme" />
 
         <android.support.design.widget.TabItem
@@ -108,4 +115,43 @@
             android:text="@string/storeString" />
     </android.support.design.widget.TabLayout>
 
-</android.support.constraint.ConstraintLayout>
+</android.support.constraint.ViewPager>-->
+
+<RelativeLayout
+    android:id="@+id/main_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <eventswithred.com.redrewards.NonScrollableVP
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true" />
+
+</RelativeLayout>
