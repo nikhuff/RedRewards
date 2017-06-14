@@ -37,8 +37,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="top_bar_test_button">test</string>
 
     <string name="Instagram_lower">Instagram</string>
+    <string name="top_bar_settings_button">settings_button</string>
 
 </resources>

@@ -5,7 +5,7 @@
     <item
         android:id="@+id/settings_button"
         android:icon="@drawable/ic_settings"
-        android:title="@string/top_bar_test_button"
+        android:title="@string/top_bar_settings_button"
         app:showAsAction="always"/>
 
     <item
