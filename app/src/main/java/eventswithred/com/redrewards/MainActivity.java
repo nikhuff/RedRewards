@@ -49,10 +49,12 @@ public class MainActivity extends AppCompatActivity {
         myUser.setUserName("DanielCraig");
 
         // Restore preferences
+        Log.d("Resume", "Loading SharedPreferences");
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         if (settings.contains("Username")){
             myUser.setUserName(settings.getString("Username", ""));
         }
+        Log.d("Resume", "Loaded SharedPreferences");
     }
 
     /********************************************************************************************
