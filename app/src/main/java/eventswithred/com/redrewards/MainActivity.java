@@ -1,6 +1,10 @@
 package eventswithred.com.redrewards;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,9 +14,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.util.Log;
 
+import static android.R.attr.start;
 import static android.R.attr.tag;
 
 public class MainActivity extends AppCompatActivity {
+
+    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,34 +34,51 @@ public class MainActivity extends AppCompatActivity {
         ab.setDisplayShowTitleEnabled(false);
 
 
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Feed"));
-        tabLayout.addTab(tabLayout.newTab().setText("Points"));
-        tabLayout.addTab(tabLayout.newTab().setText("Store"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.setupWithViewPager(mViewPager);
+    }
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final MainPagerAdapter adapter = new MainPagerAdapter
-                (getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+
+            switch (position) {
+                case 0:
+                    return new SocialMediaTabFragment();
+                case 1:
+                    return new PointsTabFragment();
+                default:
+                    return new StoreTabFragment();
             }
+        }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
+        @Override
+        public int getCount() {
+            // Show 3 total pages.
+            return 3;
+        }
 
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return "Feeds";
+                case 1:
+                    return "Points";
+                case 2:
+                    return "Store";
             }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+            return null;
+        }
     }
 
     @Override
@@ -69,12 +94,14 @@ public class MainActivity extends AppCompatActivity {
             case R.id.settings_button:
                 Log.d("userinteraction", "user pressed the settings button");
                 // User chose the "Settings" item, show the app settings UI...
+                Intent intent = new Intent(this, Settings.class);
+                startActivity(intent);
                 return true;
 
             case R.id.login_button:
                 Log.d("userinteraction", "user pressed the login button");
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
+                intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
                 return true;
 
             default:

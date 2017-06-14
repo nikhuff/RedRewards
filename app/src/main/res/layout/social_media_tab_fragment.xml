@@ -59,18 +59,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
-        <android.support.design.widget.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/Facebook_lower" />
-        <android.support.design.widget.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/Twitter_lower" />
-        <android.support.design.widget.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/Instagram_lower" />
     </android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager
@@ -78,15 +66,6 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_below="@id/tab_layout">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="SocialMediaTab"
-            android:textAlignment="viewStart"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </android.support.v4.view.ViewPager>
 

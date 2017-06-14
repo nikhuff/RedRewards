@@ -14,7 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/REDAppTheme">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,12 +25,14 @@
         <fragment
             android:name=".SocialFeeder"
             android:label="@string/title_activity_social_feeder"
-            android:theme="@style/REDAppTheme">
-        </fragment>
-
+            android:theme="@style/REDAppTheme"></fragment>
         <fragment android:name=".StoreActivity" />
 
-        <activity android:name=".LoginActivity"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".Settings"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
