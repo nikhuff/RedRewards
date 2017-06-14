@@ -135,7 +135,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:clickable="false"
-            android:elevation="4dp"
+            android:elevation="6dp"
             android:weightSum="1"
             app:contentInsetLeft="@dimen/fab_margin">
 

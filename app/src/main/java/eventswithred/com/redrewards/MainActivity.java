@@ -53,10 +53,13 @@ public class MainActivity extends AppCompatActivity {
 
             switch (position) {
                 case 0:
+                    Log.d("fragment, getItem" , "returning new SocialMediaTabFragment...");
                     return new SocialMediaTabFragment();
                 case 1:
+                    Log.d("fragment, getItem" , "returning new PointsTabFragment...");
                     return new PointsTabFragment();
                 default:
+                    Log.d("fragment, getItem" , "returning new StoreTabFragment...");
                     return new StoreTabFragment();
             }
         }
