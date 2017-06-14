@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         //ab.setLogo(R.drawable.logo_wide);
         ab.setDisplayShowTitleEnabled(false);
 
-
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -48,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
 
         myUser = new User();
         myUser.setUserName("DanielCraig");
+
+        // Restore preferences
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        if (settings.contains("Username")){
+            myUser.setUserName(settings.getString("Username", ""));
+        }
     }
 
     @Override
