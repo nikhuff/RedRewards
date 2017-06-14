@@ -125,6 +125,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <eventswithred.com.redrewards.NonScrollableVP
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -154,10 +160,5 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <eventswithred.com.redrewards.NonScrollableVP
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true" />
 
 </RelativeLayout>

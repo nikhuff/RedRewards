@@ -55,23 +55,36 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /********************************************************************************************
+     * onPause
+     * Pause the program
+     *******************************************************************************************/
     @Override
     public void onPause() {
         super.onPause();  // Always call the superclass method first
 
     }
 
+    /********************************************************************************************
+     * onStop
+     * saves session data
+     ********************************************************************************************/
     @Override
     protected void onStop() {
         super.onStop();
 
+        Log.d("Stop action", "saving data....");
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("Username", myUser.getUserName());
         editor.commit();
-
+        Log.d("Stop action", "saved data.....");
     }
 
+    /********************************************************************************************
+     * CLASS SectionsPagerAdapter
+     * the central portion of the activity. Contains fragments.
+     ********************************************************************************************/
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -114,6 +127,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /********************************************************************************************
+     * onCreateOptionsMenu
+     * @param menu
+     * @return boolean
+     * fills the top bar with content found in top_menu_bar.xml
+     ********************************************************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -121,6 +140,12 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /********************************************************************************************
+     * onOptionsItemSelected
+     * @param item
+     * @return boolean
+     * actions that occur when somthing is pressed.
+     *********************************************************************************************/
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
