@@ -2,21 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/settings_button"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/top_bar_settings_button"
-        app:showAsAction="always"/>
+    <group app:showAsAction="always"
+        android:layout_width="wrap_content">
+        <item
+            android:id="@+id/settings_button"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/top_bar_settings_button"
+            app:showAsAction="always"
+            android:layout_width="wrap_content" />
 
-    <item
-        android:id="@+id/top_bar_logo"
-        android:icon="@drawable/logo_wide"
-        app:showAsAction="always"/>
+       <!--  <item
+            android:id="@+id/top_bar_logo"
+            android:icon="@drawable/logo_wide"
+            app:showAsAction="always" /> -->
 
-    <item
-        android:id="@+id/login_button"
-        android:icon="@drawable/ic_login"
-        android:title="top_bar_login_button"
-        app:showAsAction="always"/>
-
+        <item
+            android:id="@+id/login_button"
+            android:icon="@drawable/ic_login"
+            android:title="top_bar_login_button"
+            app:showAsAction="always" />
+    </group>
 </menu>
