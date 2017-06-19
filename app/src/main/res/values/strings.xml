@@ -43,4 +43,19 @@
     <string name="Instagram_lower">Instagram</string>
     <string name="top_bar_settings_button">settings_button</string>
 
+    //temporary store strings
+    <string-array name="Planets">
+        <item></item>
+        <item>Sun</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Pluto</item>
+    </string-array>
+
 </resources>
