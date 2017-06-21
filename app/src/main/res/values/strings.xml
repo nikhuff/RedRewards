@@ -43,4 +43,7 @@
     <string name="Instagram_lower">Instagram</string>
     <string name="top_bar_settings_button">settings_button</string>
 
+    <string name="facebook_app_id">1714311902203445</string>
+    <string name="fb_login_protocol_scheme">fb1714311902203445</string>
+
 </resources>
