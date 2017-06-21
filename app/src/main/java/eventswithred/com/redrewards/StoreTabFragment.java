@@ -1,27 +1,32 @@
 package eventswithred.com.redrewards;
 
-import android.app.ListActivity;
-import android.database.Cursor;
-import android.provider.ContactsContract;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.SimpleCursorAdapter;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class StoreTabFragment extends ListFragment implements AdapterView.OnItemClickListener {
+
+
+    //working with ListView
+    //https://developer.android.com/training/improving-layouts/smooth-scrolling.html
+    //https://developer.android.com/reference/android/widget/ListView.html
+
+    //filling and designing a layout
+    //https://developer.android.com/guide/topics/ui/declaring-layout.html#FillingTheLayout
+
+    //layout class
+    //  https://developer.android.com/reference/android/R.layout.html
+    //  int list_content
+    //  Standard content view for a ListFragment. If you are implementing a subclass of ListFragment
+    // with your own customized content, you can include this layout in that content to still retain
+    // all of the standard functionality of the base class.
+
+
 
     //SITE THAT PROVIDED CODE TO FINALLY GET A LIST TO SHOW
     //https://www.tutorialspoint.com/android/android_list_fragment.htm
@@ -29,7 +34,7 @@ public class StoreTabFragment extends ListFragment implements AdapterView.OnItem
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.store_tab_content, container, false);
+        View view = inflater.inflate(R.layout.store_tab_fragment, container, false);
         return view;
     }
 
