@@ -46,4 +46,19 @@
     <string name="facebook_app_id">1714311902203445</string>
     <string name="fb_login_protocol_scheme">fb1714311902203445</string>
 
+    //temporary store strings
+    <string-array name="Planets">
+        <item></item>
+        <item>Sun</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Pluto</item>
+    </string-array>
+
 </resources>

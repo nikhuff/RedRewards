@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private FirebaseAuth mAuth;
 
+
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -181,8 +182,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private boolean validateForm() {
         boolean valid = true;
 
+        TextView mEmailField = (TextView)findViewById(R.id.email);
+        TextView mPasswordField = (TextView)findViewById(R.id.password);
+
         //all this is example code from google
-        /*String email = mEmailField.getText().toString();
+        String email = mEmailField.getText().toString();
         if (TextUtils.isEmpty(email)) {
             mEmailField.setError("Required.");
             valid = false;
@@ -196,7 +200,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             valid = false;
         } else {
             mPasswordField.setError(null);
-        }*/
+        }
 
         return valid;
     }
