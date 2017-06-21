@@ -7,9 +7,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.util.Log;
 
 public class StoreTabFragment extends ListFragment implements AdapterView.OnItemClickListener {
+
+   // StoreItem holder = new StoreItem();
+    //holder.itemImage = (ImageView) convertView.findViewById(R.id.listitem_image);
+    //holder.text = (TextView) convertView.findViewById(R.id.listitem_text);
+    //holder.timestamp = (TextView) convertView.findViewById(R.id.listitem_timestamp);
+    //holder.progress = (ProgressBar) convertView.findViewById(R.id.progress_spinner);
+//convertView.setTag(holder);
 
 
     //working with ListView
@@ -41,6 +51,7 @@ public class StoreTabFragment extends ListFragment implements AdapterView.OnItem
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        Log.d("storeFragment","loading the array adapter");
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.Planets, android.R.layout.simple_list_item_1);
         setListAdapter(adapter);
@@ -51,9 +62,30 @@ public class StoreTabFragment extends ListFragment implements AdapterView.OnItem
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT).show();
     }
+/*
+// Using an AsyncTask to load the slow images in a background thread
+new AsyncTask<ViewHolder, Void, Bitmap>() {
+        private ViewHolder v;
 
+        @Override
+        protected Bitmap doInBackground(ViewHolder... params) {
+            v = params[0];
+            return mFakeImageLoader.getImage();
+        }
 
-
+        @Override
+        protected void onPostExecute(Bitmap result) {
+            super.onPostExecute(result);
+            if (v.position == position) {
+                // If this item hasn't been recycled already, hide the
+                // progress and set and show the image
+                v.progress.setVisibility(View.GONE);
+                v.icon.setVisibility(View.VISIBLE);
+                v.icon.setImageBitmap(result);
+            }
+        }
+    }.execute(holder);
+*/
         // link to get started with listing the store items
         // https://developer.android.com/guide/topics/ui/layout/listview.html
 
