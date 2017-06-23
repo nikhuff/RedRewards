@@ -6,13 +6,17 @@
     android:orientation="vertical">
 
     <ListView
-        android:id="@android:id/list"
-        android:layout_width="match_parent"
+        android:id="@+id/StoreItemlist"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="47dp"
+        android:layout_marginTop="47dp"
+        android:background="?attr/colorControlHighlight"
+        android:divider="@android:color/black"
         android:dividerHeight="5dp"
-        android:visibility="visible"
-        android:layout_marginTop="47dp">
-    </ListView>
+        android:scrollbars="vertical"
+        android:smoothScrollbar="true"
+        android:visibility="visible"></ListView>
 
     <!--
     <TextView

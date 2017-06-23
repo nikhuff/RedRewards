@@ -7,20 +7,17 @@ import android.widget.ImageView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-/**
- * Created by nik on 6/7/17.
- */
 
-public class StoreItem extends SimpleCursorAdapter{
-    TextView name;
-    TextView description;
+//https://guides.codepath.com/android/Using-an-ArrayAdapter-with-ListView
+
+public class StoreItem{
+    String name;
+    String description;
     int price;
     boolean inStock;
-    ImageView itemImage;
-    int position;
+    Image itemImage;
 
-    public StoreItem(Context context, int layout, Cursor c, String[] from, int[] to, int flags) {
-      super(context, layout, c, from, to, flags);
+    public StoreItem(String NAME, String DESC){
     }
 }
 /*static class ViewHolder {

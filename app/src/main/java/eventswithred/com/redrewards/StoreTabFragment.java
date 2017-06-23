@@ -8,9 +8,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Log;
+
+import java.util.ArrayList;
 
 public class StoreTabFragment extends ListFragment implements AdapterView.OnItemClickListener {
 
@@ -44,6 +48,7 @@ public class StoreTabFragment extends ListFragment implements AdapterView.OnItem
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.store_tab_fragment, container, false);
         return view;
     }
@@ -52,15 +57,45 @@ public class StoreTabFragment extends ListFragment implements AdapterView.OnItem
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.d("storeFragment","loading the array adapter");
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(),
-                R.array.Planets, android.R.layout.simple_list_item_1);
-        setListAdapter(adapter);
+
+        /*ListAdapter adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.storeitemlist, android.R.layout.simple_list_item_1);
+        setListAdapter(adapter);*/
+
+
+
+        // Construct the data source
+        ArrayList<StoreItem> arrayItems = new ArrayList<StoreItem>();
+// Create the adapter to convert the array to views
+        StoreItemAdapter adapter = new StoreItemAdapter(getActivity(), arrayItems);
+// Attach the adapter to a ListView
+        ListView listView = (ListView) getActivity().findViewById(R.id.StoreItemlist);
+
+        listView.setAdapter(adapter);
+
+        StoreItem newSItem = new StoreItem("Nathan", "San Diego");
+        adapter.add(newSItem);
+
+
+
         getListView().setOnItemClickListener(this);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT).show();
+
+        // Add item to adapter
+        //StoreItem newSItem = new StoreItem("Nathan", "San Diego");
+        //adapter.add(newUser);
+        /*
+// Or even append an entire new collection
+// Fetching some data, data has now returned
+// If data was JSON, convert to ArrayList of User objects.
+        JSONArray jsonArray = ...;
+        ArrayList<User> newUsers = User.fromJson(jsonArray)
+        adapter.addAll(newUsers);*/
+
     }
 /*
 // Using an AsyncTask to load the slow images in a background thread
