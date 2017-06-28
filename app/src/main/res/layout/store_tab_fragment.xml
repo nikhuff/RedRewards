@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/store_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#d1d1d1">
 
-    <ViewStub
-        android:id="@+id/stub_list"
+    <ListView
+        android:id="@id/android:list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:inflatedId="@+id/showlayout"
-        android:layout="@layout/store_listview"/>
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:cacheColorHint="#00000000"
+        android:divider="#d1d1d1"
+        android:dividerHeight="10dp" />
 
-    <ViewStub
-        android:id="@+id/stub_grid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:inflatedId="@+id/showlayout"
-        android:layout="@layout/store_gridview"/>
 </LinearLayout>
