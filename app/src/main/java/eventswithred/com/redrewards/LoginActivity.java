@@ -20,9 +20,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private static final String TAG = LoginActivity.class.getSimpleName();
 
+    /**
+     * mStatusTextView is the text that tells a user the status of their login attempt
+     */
     private TextView mStatusTextView;
+
+    /**
+     * mDetailTextView
+     */
     private TextView mDetailTextView;
+
+    /**
+     * mEmailField represents the contents of the email editText box
+     */
     private TextView mEmailField;
+
+    /**'
+     * mPasswordField represents the contents of the password editText box
+     */
     private TextView mPasswordField;
 
     //Declares a FirebaseAuth object
