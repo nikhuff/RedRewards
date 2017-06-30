@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.ProviderQueryResult;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -96,7 +97,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void signIn(String email, String password) {
         Log.d(TAG, "Sign in: " + email);
-        
+
         if (!validateForm()) {
             return;
         }
@@ -148,7 +149,32 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         return valid;
     }
 
+
     public void createAccount(String email, String password) {
+        if (!validateForm()) {
+            return;
+        }
+
+        try {
+
+            Log.d("Login", "Now checking if the email has been used before...");
+            mAuth.fetchProvidersForEmail(email).addOnCompleteListener(new OnCompleteListener<ProviderQueryResult>() {
+                @Override
+                public void onComplete(@NonNull Task<ProviderQueryResult> task) {
+                    if (task.isSuccessful()) {
+                        // The user has already registered successfully
+                        // task.getResult().getProviders();
+                        Toast.makeText(LoginActivity.this, "This email is already in use.",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        Log.d("Login", task.getException().getMessage());
+                    }
+                }
+            });
+        } catch (Exception e) {
+            Log.d("Login", "You got an error: " + e.getMessage());
+        }
+
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
