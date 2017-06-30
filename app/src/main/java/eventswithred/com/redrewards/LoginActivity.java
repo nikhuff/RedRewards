@@ -1,5 +1,6 @@
 package eventswithred.com.redrewards;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -21,21 +22,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static final String TAG = LoginActivity.class.getSimpleName();
 
     /**
+     * @author Daniel Craig
+     * @since 6/28/2017
      * mStatusTextView is the text that tells a user the status of their login attempt
      */
     private TextView mStatusTextView;
 
     /**
+     * @author Daniel Craig
+     * @since 6/28/2017
      * mDetailTextView
      */
     private TextView mDetailTextView;
 
     /**
+     * @author Daniel Craig
+     * @since 6/28/2017
      * mEmailField represents the contents of the email editText box
      */
     private TextView mEmailField;
 
     /**'
+     * @author Daniel Craig
+     * @since 6/28/2017
      * mPasswordField represents the contents of the password editText box
      */
     private TextView mPasswordField;
@@ -48,7 +57,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //mStatusTextView = (TextView) findViewById(R.id.status);
+        //mStatusTextView = (TextView) findViewById(R.id.TVstatusView);
         //mDetailTextView = (TextView) findViewById(R.id.status);
         mEmailField = (EditText) findViewById(R.id.email);
         mPasswordField = (EditText) findViewById(R.id.password);
@@ -59,7 +68,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //findViewById(R.id.verify_email_button).setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
-
     }
 
     @Override
@@ -112,6 +120,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         }
                     }
                 });
+        //create a new intent that sends us back to the main screen
+        Intent goToMainActivity = new Intent(this, MainActivity.class);
+        startActivity(goToMainActivity);
     }
 
     public void createAccount(String email, String password) {
