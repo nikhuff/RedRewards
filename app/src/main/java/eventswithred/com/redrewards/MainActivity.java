@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.login_button:
                 Log.d("userinteraction", "user pressed the login button");
-                intent = new Intent(this, LoginActivity.class);
+                intent = new Intent(this, noDisplayLoginLauncher.class);
                 startActivity(intent);
                 return true;
 
