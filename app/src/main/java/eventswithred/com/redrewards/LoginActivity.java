@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -95,10 +96,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void signIn(String email, String password) {
         Log.d(TAG, "Sign in: " + email);
-        //you still need to write validateForm()
-        /*if (!validateForm()) {
+        
+        if (!validateForm()) {
             return;
-        }*/
+        }
 
         //showProgressDialog();
 
@@ -123,6 +124,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //create a new intent that sends us back to the main screen
         Intent goToMainActivity = new Intent(this, MainActivity.class);
         startActivity(goToMainActivity);
+    }
+
+    private boolean validateForm() {
+        boolean valid = true;
+
+        String email = mEmailField.getText().toString();
+        if (TextUtils.isEmpty(email)) {
+            mEmailField.setError("Required.");
+            valid = false;
+        } else {
+            mEmailField.setError(null);
+        }
+
+        String password = mPasswordField.getText().toString();
+        if (TextUtils.isEmpty(password)) {
+            mPasswordField.setError("Required.");
+            valid = false;
+        } else {
+            mPasswordField.setError(null);
+        }
+
+        return valid;
     }
 
     public void createAccount(String email, String password) {
