@@ -25,14 +25,17 @@
         <fragment
             android:name=".SocialFeeder"
             android:label="@string/title_activity_social_feeder"
-            android:theme="@style/REDAppTheme"></fragment>
+            android:theme="@style/REDAppTheme" />
         <fragment android:name=".StoreActivity" />
 
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".Settings"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".Settings"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".noDisplayLoginLauncher" />
+        <activity android:name=".LogoutActivity"></activity>
     </application>
 
 </manifest>
