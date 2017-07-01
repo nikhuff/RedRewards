@@ -41,7 +41,6 @@ public class TwitterTabFragment extends Fragment {
 
 
 
-
     /*
     *when the app is starting the following messages appears after the program hangs for a few
     *
