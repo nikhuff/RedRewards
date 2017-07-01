@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -43,18 +44,16 @@ public class SocialMediaTabFragment extends Fragment {
             switch (position) {
                 case 0:
                     return new FacebookTabFragment();
-                case 1:
-                    return new TwitterTabFragment();
                 default:
-                    return new InstagramTabFragment();
+                    return new TwitterTabFragment();
             }
 
         }
 
         @Override
         public int getCount() {
-            // Show 4 total pages.
-            return 3;
+            // Show 2 total pages.
+            return 2;
         }
 
         @Override
@@ -63,13 +62,9 @@ public class SocialMediaTabFragment extends Fragment {
             switch (position) {
                 case 0:
                     return "Facebook";
-                case 1:
-                    return "Twitter";
                 default:
-                    return "Instagram";
+                    return "Twitter";
             }
-
-
         }
     }
 }
