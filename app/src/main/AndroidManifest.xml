@@ -55,7 +55,9 @@
             android:name=".Settings"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".noDisplayLoginLauncher" />
-        <activity android:name=".LogoutActivity"></activity>
+        <activity
+            android:name=".LogoutActivity"
+            android:parentActivityName=".MainActivity" ></activity>
     </application>
 
 </manifest>
