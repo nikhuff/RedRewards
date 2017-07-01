@@ -1,6 +1,8 @@
 package eventswithred.com.redrewards;
 
-public class StoreProduct {
+import java.io.Serializable;
+
+public class StoreProduct implements Serializable {
     private int imageId;
     private String title;
     private String description;

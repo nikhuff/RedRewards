@@ -38,6 +38,20 @@ public class TwitterTabFragment extends Fragment {
         return inflater.inflate(R.layout.twitter_tab_fragment, container, false);
     }
 
+
+
+
+
+    /*
+    *when the app is starting the following messages appears after the program hangs for a few
+    *
+    *
+    *07-01 16:21:57.330 20903-21223/eventswithred.com.redrewards W/Twitter: Could not call getId on com.google.android.gms.ads.identifier.AdvertisingIdClient$Info
+    *07-01 16:22:07.340 20903-21223/eventswithred.com.redrewards W/Twitter: Could not call isLimitAdTrackingEnabled on com.google.android.gms.ads.identifier.AdvertisingIdClient$Info
+    */
+
+
+
     @Override
     public void onActivityCreated (Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

@@ -1,18 +1,13 @@
 package eventswithred.com.redrewards;
 
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.support.v4.app.ListFragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewStub;
 import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -49,7 +44,7 @@ public class StoreTabFragment extends ListFragment implements AdapterView.OnItem
     public List<StoreProduct> getProductList() {
         //pseudo code to get product, replace your code to get real product here
         productList = new ArrayList<>();
-        productList.add(new StoreProduct(R.drawable.red2, "RED T-Shirt", "A Standard RED T-Shirt", 10));
+        productList.add(new StoreProduct(R.drawable.ic_home_black_24dp, "RED T-Shirt", "A Standard RED T-Shirt", 10));
         productList.add(new StoreProduct(R.drawable.red2, "Title 2", "This is description 2", 10));
         productList.add(new StoreProduct(R.drawable.red2, "Title 3", "This is description 3", 10));
         productList.add(new StoreProduct(R.drawable.red2, "Title 4", "This is description 4", 10));
@@ -64,8 +59,13 @@ public class StoreTabFragment extends ListFragment implements AdapterView.OnItem
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
-        Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT).show();
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent viewItem = new Intent(super.getActivity(), singleItemActivity.class);
+        Log.d("intent_creation", "sending item " + position );
+        viewItem.putExtra("product", productList.get(position));
+        Log.d("intent_creation", "item possibly placed...starting activity...");
+        startActivity(viewItem);
+        //Toast.makeText(getActivity(), "Item: " + productList.get(position).getTitle(), Toast.LENGTH_SHORT).show();
     }
 }
 
