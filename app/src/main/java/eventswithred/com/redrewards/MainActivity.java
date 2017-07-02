@@ -1,11 +1,14 @@
 package eventswithred.com.redrewards;
 
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -162,6 +165,18 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("userinteraction", "user pressed the login button");
                 intent = new Intent(this, noDisplayLoginLauncher.class);
                 startActivity(intent);
+
+                // Use TaskStackBuilder to build the back stack and get the PendingIntent
+                /*PendingIntent pendingIntent =
+                        TaskStackBuilder.create(this)
+                                // add all of DetailsActivity's parents to the stack,
+                                // followed by DetailsActivity itself
+                                .addNextIntentWithParentStack(upIntent)
+                                .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+                builder.setContentIntent(pendingIntent);*/
+
                 return true;
 
             default:
