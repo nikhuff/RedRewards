@@ -59,4 +59,9 @@
     <string name="action_create_new_account">Create new account</string>
     <string name="action_log_out">log out</string>
 
+
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">oZHrSdoZdyCw5mhxqaE6WkydA</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">e8qN32EFCPgOVT2tQ9WGwzoYiIvdVyqngJAaAeWj2RKItPctFr</string>
+
+
 </resources>

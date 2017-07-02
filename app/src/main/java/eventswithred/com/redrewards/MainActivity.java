@@ -132,6 +132,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //needed for twitter stuff
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Pass the activity result to the fragment, which will then pass the result to the login
+        // button.
+        Fragment fragment =  getSupportFragmentManager().findFragmentById(R.id.twitter_fragment);
+        if (fragment != null) {
+            fragment.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
     /********************************************************************************************
      * onCreateOptionsMenu
      * @param menu
