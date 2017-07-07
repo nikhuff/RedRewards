@@ -26,9 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
 
-    private User myUser;
-
-    public static final String PREFS_NAME = "preferences.txt";
+        public static final String PREFS_NAME = "preferences.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +46,11 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(mViewPager);
 
-        myUser = new User();
-        myUser.setUserName("SampleName");
 
         // Restore preferences
         Log.d("Resume", "Loading SharedPreferences");
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        if (settings.contains("Username")){
-            myUser.setUserName(settings.getString("Username", ""));
-        }
+
         Log.d("Resume", "Loaded SharedPreferences");
     }
 
@@ -79,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
 
         Log.d("Stop action", "saving data....");
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString("Username", myUser.getUserName());
-        editor.commit();
+        //SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        //SharedPreferences.Editor editor = settings.edit();
+        //editor.putString("Username", myUser.getUserName());
+        //editor.commit();
         Log.d("Stop action", "saved data.....");
     }
 
