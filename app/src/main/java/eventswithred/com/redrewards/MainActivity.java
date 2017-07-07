@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(top_menu_bar);
         ActionBar ab = getSupportActionBar();
         //ab.setLogo(R.drawable.logo_wide);
-        ab.setDisplayShowTitleEnabled(false);
+        //ab.setDisplayShowTitleEnabled(false);
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
         myUser = new User();
-        myUser.setUserName("DanielCraig");
+        myUser.setUserName("SammpleName");
 
         // Restore preferences
         Log.d("Resume", "Loading SharedPreferences");
