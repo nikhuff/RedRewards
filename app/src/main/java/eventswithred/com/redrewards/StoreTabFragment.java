@@ -44,9 +44,9 @@ public class StoreTabFragment extends ListFragment implements AdapterView.OnItem
     public List<StoreProduct> getProductList() {
         //pseudo code to get product, replace your code to get real product here
         productList = new ArrayList<>();
-        productList.add(new StoreProduct(R.drawable.ic_home_black_24dp, "RED T-Shirt", "A Standard RED T-Shirt", 10));
-        productList.add(new StoreProduct(R.drawable.red2, "Title 2", "This is description 2", 10));
-        productList.add(new StoreProduct(R.drawable.red2, "Title 3", "This is description 3", 10));
+        productList.add(new StoreProduct(R.drawable.ic_home_black_24dp, "RED T-Shirt", "A Standard RED T-Shirt", 100));
+        productList.add(new StoreProduct(R.drawable.ic_login, "RED Hat", "A Standard RED hat", 150));
+        productList.add(new StoreProduct(R.drawable.tw__login_btn, "RED tickets", "A ticket for a RED event", 500));
         productList.add(new StoreProduct(R.drawable.red2, "Title 4", "This is description 4", 10));
         productList.add(new StoreProduct(R.drawable.red2, "Title 5", "This is description 5", 10));
         productList.add(new StoreProduct(R.drawable.red2, "Title 6", "This is description 6", 10));

@@ -45,26 +45,15 @@
     <string name="facebook_app_id">1714311902203445</string>
     <string name="fb_login_protocol_scheme">fb1714311902203445</string>
 
-    //temporary store strings
-    <string-array name="Planets">
-        <item></item>
-        <item>Sun</item>
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
-        <item>Pluto</item>
-    </string-array>
     <string name="action_create_new_account">Create new account</string>
     <string name="action_log_out">log out</string>
 
 
     <string name="com.twitter.sdk.android.CONSUMER_KEY"></string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET"></string>
+
+    <string name="points_how_to_get">how to get points:\nAttend Events\nrepost a post on social media</string>
+    <string name="points_amount_display">points:</string>
 
 
 </resources>

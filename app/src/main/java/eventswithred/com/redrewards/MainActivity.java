@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
         myUser = new User();
-        myUser.setUserName("SammpleName");
+        myUser.setUserName("SampleName");
 
         // Restore preferences
         Log.d("Resume", "Loading SharedPreferences");
