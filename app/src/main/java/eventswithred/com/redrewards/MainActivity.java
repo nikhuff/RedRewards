@@ -167,17 +167,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.settings_button:
+            /*case R.id.settings_button:
                 Log.d("userinteraction", "user pressed the settings button");
                 // User chose the "Settings" item, show the app settings UI...
                 Intent intent = new Intent(this, Settings.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
-                return true;
+                return true;*/
 
             case R.id.login_button:
                 Log.d("userinteraction", "user pressed the login button");
-                intent = new Intent(this, noDisplayLoginLauncher.class);
+                Intent intent = new Intent(this, noDisplayLoginLauncher.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
 
