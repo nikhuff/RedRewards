@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <group app:showAsAction="always"
         android:layout_width="wrap_content">
-        <item
+       <!-- <item
             android:id="@+id/settings_button"
+            android:layout_width="wrap_content"
             android:icon="@drawable/ic_settings"
             android:title="@string/top_bar_settings_button"
-            app:showAsAction="always"
-            android:layout_width="wrap_content" />
+            android:visible="false"
+            app:showAsAction="always" />
 
-       <!--  <item
+        <item
             android:id="@+id/top_bar_logo"
             android:icon="@drawable/logo_wide"
+            android:visible="false"
             app:showAsAction="always" /> -->
 
         <item
