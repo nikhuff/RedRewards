@@ -171,24 +171,15 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("userinteraction", "user pressed the settings button");
                 // User chose the "Settings" item, show the app settings UI...
                 Intent intent = new Intent(this, Settings.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
                 return true;
 
             case R.id.login_button:
                 Log.d("userinteraction", "user pressed the login button");
                 intent = new Intent(this, noDisplayLoginLauncher.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
-
-                // Use TaskStackBuilder to build the back stack and get the PendingIntent
-                /*PendingIntent pendingIntent =
-                        TaskStackBuilder.create(this)
-                                // add all of DetailsActivity's parents to the stack,
-                                // followed by DetailsActivity itself
-                                .addNextIntentWithParentStack(upIntent)
-                                .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-                builder.setContentIntent(pendingIntent);*/
 
                 return true;
 

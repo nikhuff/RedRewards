@@ -124,6 +124,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 });
         //create a new intent that sends us back to the main screen
         Intent goToMainActivity = new Intent(this, MainActivity.class);
+        goToMainActivity.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivity(goToMainActivity);
     }
 
