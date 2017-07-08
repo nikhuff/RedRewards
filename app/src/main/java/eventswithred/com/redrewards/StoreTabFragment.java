@@ -44,17 +44,12 @@ public class StoreTabFragment extends ListFragment implements AdapterView.OnItem
     public List<StoreProduct> getProductList() {
         //pseudo code to get product, replace your code to get real product here
         productList = new ArrayList<>();
-        productList.add(new StoreProduct(R.drawable.ic_home_black_24dp, "RED T-Shirt", "A Standard RED T-Shirt", 100));
-        productList.add(new StoreProduct(R.drawable.ic_login, "RED Hat", "A Standard RED hat", 150));
-        productList.add(new StoreProduct(R.drawable.tw__login_btn, "RED tickets", "A ticket for a RED event", 500));
-        productList.add(new StoreProduct(R.drawable.red2, "Title 4", "This is description 4", 10));
-        productList.add(new StoreProduct(R.drawable.red2, "Title 5", "This is description 5", 10));
-        productList.add(new StoreProduct(R.drawable.red2, "Title 6", "This is description 6", 10));
-        productList.add(new StoreProduct(R.drawable.red2, "Title 7", "This is description 7", 10));
-        productList.add(new StoreProduct(R.drawable.red2, "Title 8", "This is description 8", 10));
-        productList.add(new StoreProduct(R.drawable.red2, "Title 9", "This is description 9", 10));
-        productList.add(new StoreProduct(R.drawable.red2, "Title 10", "This is description 10", 10));
-
+        productList.add(new StoreProduct(R.drawable.redtshirt, "RED T-Shirt", "A Standard RED T-Shirt", 100));
+        productList.add(new StoreProduct(R.drawable.redhat, "RED Hat", "A Standard RED hat", 150));
+        productList.add(new StoreProduct(R.drawable.ticketssample, "RED tickets", "A ticket for a RED event", 500));
+        productList.add(new StoreProduct(R.drawable.logo_wide, "Title 4", "This is description 4", 10));
+        productList.add(new StoreProduct(R.drawable.logo_wide, "Title 5", "This is description 5", 10));
+        productList.add(new StoreProduct(R.drawable.logo_wide, "Title 6", "This is description 6", 10));
         return productList;
     }
 

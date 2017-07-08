@@ -14,7 +14,7 @@
         android:id="@+id/imageView"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        app:srcCompat="@drawable/red2" />
+        app:srcCompat="@drawable/blacklogo_wide" />
 
     <TextView
         android:id="@+id/txtTitle"
