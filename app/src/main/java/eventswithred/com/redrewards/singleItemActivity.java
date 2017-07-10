@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class singleItemActivity extends AppCompatActivity {
+    private User user = User.getUserInstance();
+    private int points = user.getPoints();
+    private StoreProduct SP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,7 @@ public class singleItemActivity extends AppCompatActivity {
         Log.d("intent", "getting intent...");
         Intent intent = getIntent();
         Log.d("intent", "intent recived...");
-        StoreProduct SP = (StoreProduct)intent.getSerializableExtra("product");
+        SP = (StoreProduct)intent.getSerializableExtra("product");
 
         String log_message = "Received intent with " + SP.getTitle();
         Log.d("intent_created", log_message);
@@ -40,7 +43,11 @@ public class singleItemActivity extends AppCompatActivity {
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.Button_Redeem) {
-            Toast.makeText(this, "to be implemented", Toast.LENGTH_LONG).show();
+            if (points >= SP.getCost())
+            {
+                user.minus_points(SP.getCost());
+            }else
+            Toast.makeText(this, "not enough points", Toast.LENGTH_LONG).show();
         }
     }
 }
