@@ -22,7 +22,7 @@ public class singleItemActivity extends AppCompatActivity {
         // Get the Intent that started this activity and extract the string
         Log.d("intent", "getting intent...");
         Intent intent = getIntent();
-        Log.d("intent", "intent recived...");
+        Log.d("intent", "intent received...");
         SP = (StoreProduct)intent.getSerializableExtra("product");
 
         String log_message = "Received intent with " + SP.getTitle();
@@ -45,7 +45,7 @@ public class singleItemActivity extends AppCompatActivity {
         if (i == R.id.Button_Redeem) {
             if (points >= SP.getCost())
             {
-                user.minus_points(SP.getCost());
+                user.subtractPoints(SP.getCost());
             }else
             Toast.makeText(this, "not enough points", Toast.LENGTH_LONG).show();
         }

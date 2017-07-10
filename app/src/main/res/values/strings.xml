@@ -49,8 +49,8 @@
     <string name="action_log_out">log out</string>
 
 
-    <string name="com.twitter.sdk.android.CONSUMER_KEY"></string>
-    <string name="com.twitter.sdk.android.CONSUMER_SECRET"></string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">7R730aLClM0m4K7zrX5RDIRED</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">QmNnSBgyjRpoLRsid3qNov3av2zNjeksbIaWFkGNPlK930E4Xb</string>
 
     <string name="points_how_to_get">how to get points:\nAttend Events\nrepost a post on social media</string>
     <string name="points_amount_display">points:</string>
