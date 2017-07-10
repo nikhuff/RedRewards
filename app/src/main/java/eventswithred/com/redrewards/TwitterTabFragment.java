@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
@@ -16,7 +18,9 @@ import com.twitter.sdk.android.core.TwitterCore;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+import com.twitter.sdk.android.tweetui.BaseTweetView;
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
+import com.twitter.sdk.android.tweetui.TwitterListTimeline;
 import com.twitter.sdk.android.tweetui.UserTimeline;
 
 import java.util.ArrayList;
@@ -50,7 +54,6 @@ public class TwitterTabFragment extends Fragment {
     */
 
 
-
     @Override
     public void onActivityCreated (Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -67,21 +70,29 @@ public class TwitterTabFragment extends Fragment {
         ListView lv = (ListView) getActivity().findViewById(R.id.tweet_list_view);
         lv.setAdapter(adapter);
 
-
-        /*loginButton = (TwitterLoginButton) getActivity().findViewById(R.id.twitter_login_button);
+        loginButton = (TwitterLoginButton) getActivity().findViewById(R.id.twitter_login_button);
         loginButton.setCallback(new Callback<TwitterSession>() {
             @Override
             public void success(Result<TwitterSession> result) {
                 // Do something with result, which provides a TwitterSession for making API calls
+
             }
 
             @Override
             public void failure(TwitterException exception) {
                 // Do something on failure
             }
-        });*/
 
+        });
 
+        Button pointButton = (Button) getActivity().findViewById(R.id.earn_points);
+        pointButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                User user = User.getUserInstance();
+                user.addPoints(10);
+                Toast.makeText(getActivity(), "Simulated sharing post!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
 }

@@ -35,18 +35,11 @@ public class FacebookTabFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view;
+        View view = inflater.inflate(R.layout.facebook_tab_fragment, container, false);
 
-        if (isLoggedIn()) {
-            view = inflater.inflate(R.layout.facebook_tab_fragment, container, false);
-        } else {
-            view = inflater.inflate(R.layout.facebook_login, container, false);
-        }
-
-        callbackManager = CallbackManager.Factory.create();
+        /*callbackManager = CallbackManager.Factory.create();
 
         loginButton = (LoginButton) view.findViewById(R.id.login_button);
-        loginButton.setFragment(this);
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -65,7 +58,7 @@ public class FacebookTabFragment extends Fragment {
                 // App code
                 Log.d(TAG, "Login unsuccessful. Exception: " + exception.toString());
             }
-        });
+        });*/
 
         return view;
     }

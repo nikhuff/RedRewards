@@ -34,4 +34,8 @@
 
     <style name="REDAppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="tw__TweetDarkWithActionsStyle" parent="tw__TweetDarkStyle">
+        <item name="tw__tweet_actions_enabled">true</item>
+    </style>
+
 </resources>

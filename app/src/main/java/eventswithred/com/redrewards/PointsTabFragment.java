@@ -15,6 +15,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class PointsTabFragment extends Fragment {
 
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private User user = User.getUserInstance();
+    private int points = user.getPoints();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -27,22 +29,35 @@ public class PointsTabFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        hideItems();
+        display();
     }
 
-    private void hideItems() {
+    private void display() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         View v = this.getView();
-        TextView pointsDisplay = (TextView) v.findViewById(R.id.Points_Display);
-        if (currentUser != null) {
+        TextView pointsDisplay = (TextView) v.findViewById(R.id.Points_Display);if (currentUser != null) {
             //a user is already logged in
-            pointsDisplay.setText("POINTS: " + "someNumber");
+            pointsDisplay.setText("POINTS: " + points);
             Log.d("nodisplay", mAuth.getCurrentUser().getEmail() + " is already logged in!");
         } else {
-            pointsDisplay.setText("Log in to see your points");
+            //pointsDisplay.setText("Log in to see your points");
             Log.d("nodisplay", "No user is logged in yet!");
         }
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        points = user.getPoints();
+        display();
+    }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+            points = user.getPoints();
+            display();
+        }
+    }
 }
