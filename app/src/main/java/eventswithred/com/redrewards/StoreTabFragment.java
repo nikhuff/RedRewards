@@ -47,9 +47,9 @@ public class StoreTabFragment extends ListFragment implements AdapterView.OnItem
         productList.add(new StoreProduct(R.drawable.redtshirt, "RED T-Shirt", "A Standard RED T-Shirt", 100));
         productList.add(new StoreProduct(R.drawable.redhat, "RED Hat", "A Standard RED hat", 150));
         productList.add(new StoreProduct(R.drawable.ticketssample, "RED tickets", "A ticket for a RED event", 500));
-        productList.add(new StoreProduct(R.drawable.logo_wide, "Title 4", "This is description 4", 10));
-        productList.add(new StoreProduct(R.drawable.logo_wide, "Title 5", "This is description 5", 10));
-        productList.add(new StoreProduct(R.drawable.logo_wide, "Title 6", "This is description 6", 10));
+        productList.add(new StoreProduct(R.drawable.logo_wide, "Title 4", "This is description 4", 20));
+        productList.add(new StoreProduct(R.drawable.logo_wide, "Title 5", "This is description 5", 1));
+        productList.add(new StoreProduct(R.drawable.logo_wide, "Title 6", "This is description 6", 5));
         return productList;
     }
 

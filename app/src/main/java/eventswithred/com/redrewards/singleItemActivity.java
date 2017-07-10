@@ -43,7 +43,7 @@ public class singleItemActivity extends AppCompatActivity {
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.Button_Redeem) {
-            if (points >= SP.getCost())
+            if (user.canSubtract(SP.getCost()))
             {
                 user.subtractPoints(SP.getCost());
             }

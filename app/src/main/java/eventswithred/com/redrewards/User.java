@@ -54,4 +54,6 @@ public class User {
     public void subtractPoints(int points) {
         this.points -= points;
     }
+
+    public boolean canSubtract(int points) {return (this.points >= points);}
 }
