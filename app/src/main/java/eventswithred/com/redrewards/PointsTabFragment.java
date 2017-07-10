@@ -35,7 +35,8 @@ public class PointsTabFragment extends Fragment {
     private void display() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         View v = this.getView();
-        TextView pointsDisplay = (TextView) v.findViewById(R.id.Points_Display);if (currentUser != null) {
+        TextView pointsDisplay = (TextView) v.findViewById(R.id.tvPointsDisplay);
+        if (currentUser != null) {
             //a user is already logged in
             pointsDisplay.setText("POINTS: " + points);
             Log.d("nodisplay", mAuth.getCurrentUser().getEmail() + " is already logged in!");
