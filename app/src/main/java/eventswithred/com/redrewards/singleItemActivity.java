@@ -46,7 +46,8 @@ public class singleItemActivity extends AppCompatActivity {
             if (points >= SP.getCost())
             {
                 user.subtractPoints(SP.getCost());
-            }else
+            }
+            else
             Toast.makeText(this, "not enough points", Toast.LENGTH_LONG).show();
         }
     }
