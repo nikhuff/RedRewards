@@ -10,14 +10,8 @@
         android:layout_width="210dp"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
-
-    <ListView
-        android:layout_width="116dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/tweet_list_view" />
+        android:layout_alignParentEnd="true" />
 
     <com.twitter.sdk.android.core.identity.TwitterLoginButton
         android:id="@+id/twitter_login_button"

@@ -48,7 +48,17 @@ public class TwitterTabFragment extends Fragment {
 
         Log.d("twitterTabFragment", "Loading the tweets.");
 
+        //generate list
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("item1");
+        list.add("item2");
 
+        //instantiate custom adapter
+        customArrayAdapter adapter = new customArrayAdapter(list, getActivity());
+
+        //handle listview and assign adapter
+        ListView lView = (ListView)getActivity().findViewById(R.id.tweet_list_view);
+        lView.setAdapter(adapter);
 
 
 
