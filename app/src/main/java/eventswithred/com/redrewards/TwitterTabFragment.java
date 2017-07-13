@@ -42,33 +42,30 @@ public class TwitterTabFragment extends Fragment {
         return inflater.inflate(R.layout.twitter_tab_fragment, container, false);
     }
 
-
-
-
-    /*
-    *when the app is starting the following messages appears after the program hangs for a few
-    *
-    *
-    *07-01 16:21:57.330 20903-21223/eventswithred.com.redrewards W/Twitter: Could not call getId on com.google.android.gms.ads.identifier.AdvertisingIdClient$Info
-    *07-01 16:22:07.340 20903-21223/eventswithred.com.redrewards W/Twitter: Could not call isLimitAdTrackingEnabled on com.google.android.gms.ads.identifier.AdvertisingIdClient$Info
-    */
-
-
     @Override
     public void onActivityCreated (Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         Log.d("twitterTabFragment", "Loading the tweets.");
 
-        TwitterSession session = TwitterCore.getInstance().getSessionManager().getActiveSession();
 
-        UserTimeline userTimeline = new UserTimeline.Builder().screenName("eventswithred").build();
-        final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity())
-                .setTimeline(userTimeline)
-                .build();
 
-        ListView lv = (ListView) getActivity().findViewById(R.id.tweet_list_view);
-        lv.setAdapter(adapter);
+
+
+
+
+// this code is a little closed - I'm going to rewrite it so that I can make a custom layout for each tweet
+//        TwitterSession session = TwitterCore.getInstance().getSessionManager().getActiveSession();
+
+//        UserTimeline userTimeline = new UserTimeline.Builder().screenName("eventswithred").maxItemsPerRequest(20).build();
+        //Log.d(this, "The timeline has " +
+
+//        final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity())
+//                .setTimeline(userTimeline)
+//                .build();
+
+//        ListView lv = (ListView) getActivity().findViewById(R.id.tweet_list_view);
+//        lv.setAdapter(adapter);
 
         loginButton = (TwitterLoginButton) getActivity().findViewById(R.id.twitter_login_button);
         loginButton.setCallback(new Callback<TwitterSession>() {
