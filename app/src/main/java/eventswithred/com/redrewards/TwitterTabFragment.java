@@ -85,7 +85,7 @@ public class TwitterTabFragment extends Fragment {
 
         });
 
-        Button pointButton = (Button) getActivity().findViewById(R.id.earn_points);
+        /*Button pointButton = (Button) getActivity().findViewById(R.id.earn_points);
         pointButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +93,6 @@ public class TwitterTabFragment extends Fragment {
                 user.addPoints(10);
                 Toast.makeText(getActivity(), "Simulated sharing post!", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
 }
