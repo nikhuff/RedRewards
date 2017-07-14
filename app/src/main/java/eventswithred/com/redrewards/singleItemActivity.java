@@ -43,14 +43,16 @@ public class singleItemActivity extends AppCompatActivity {
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.Button_Redeem) {
+            Log.d("Store", "User has requested to redeem points for an item.");
             if (user.canSubtract(SP.getCost()))
             {
                 user.subtractPoints(SP.getCost());
                 Toast.makeText(this, "" + SP.getCost() + " points has been removed from your account.", Toast.LENGTH_LONG).show();
-
             }
-            else
-            Toast.makeText(this, "not enough points", Toast.LENGTH_LONG).show();
+            else {
+                Log.d("Store", "User does not have enough points for an item.");
+                Toast.makeText(this, "not enough points", Toast.LENGTH_LONG).show();
+            }
         }
     }
 }

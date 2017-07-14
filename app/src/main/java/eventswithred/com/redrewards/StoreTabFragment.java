@@ -64,28 +64,3 @@ public class StoreTabFragment extends ListFragment implements AdapterView.OnItem
     }
 }
 
-/*
-// Using an AsyncTask to load the slow images in a background thread
-new AsyncTask<ViewHolder, Void, Bitmap>() {
-        private ViewHolder v;
-
-        @Override
-        protected Bitmap doInBackground(ViewHolder... params) {
-            v = params[0];
-            return mFakeImageLoader.getImage();
-        }
-
-        @Override
-        protected void onPostExecute(Bitmap result) {
-            super.onPostExecute(result);
-            if (v.position == position) {
-                // If this item hasn't been recycled already, hide the
-                // progress and set and show the image
-                v.progress.setVisibility(View.GONE);
-                v.icon.setVisibility(View.VISIBLE);
-                v.icon.setImageBitmap(result);
-            }
-        }
-    }.execute(holder);
-*/
-

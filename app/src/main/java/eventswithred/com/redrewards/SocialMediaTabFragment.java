@@ -40,6 +40,11 @@ public class SocialMediaTabFragment extends Fragment {
             super(fm);
         }
 
+        /**
+         * used to get what fragment to display when selected
+         * @param position
+         * @return fragment
+         */
         @Override
         public Fragment getItem(int position) {
             switch (position) {
@@ -51,12 +56,22 @@ public class SocialMediaTabFragment extends Fragment {
 
         }
 
+        /**
+         *
+         * @return nomber of tabs that are needed to be shown on the tab fragment
+         */
         @Override
         public int getCount() {
             // Show 2 total pages.
             return 2;
         }
 
+
+        /**
+         *
+         * @param position
+         * @return the string to be shown on the tab
+         */
         @Override
         public CharSequence getPageTitle(int position) {
 
