@@ -14,10 +14,12 @@ import android.widget.Toast;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.core.TwitterApiClient;
 import com.twitter.sdk.android.core.TwitterCore;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+import com.twitter.sdk.android.core.models.Tweet;
 import com.twitter.sdk.android.tweetui.BaseTweetView;
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
 import com.twitter.sdk.android.tweetui.TwitterListTimeline;
@@ -25,6 +27,8 @@ import com.twitter.sdk.android.tweetui.UserTimeline;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 public class TwitterTabFragment extends Fragment {
 
@@ -48,26 +52,33 @@ public class TwitterTabFragment extends Fragment {
 
         Log.d("twitterTabFragment", "Loading the tweets.");
 
+        TweetLoader tl = new TweetLoader();
+        try {
+            Map <Integer, redTweet> myMap = tl.execute("eventswithred").get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
         //generate list
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("item1");
-        list.add("item2");
+        ArrayList<redTweet> list = new ArrayList<redTweet>();
+        //list.add(userTimeline.get(0));
+        //list.add("item2");
 
         //instantiate custom adapter
         customArrayAdapter adapter = new customArrayAdapter(list, getActivity());
 
         //handle listview and assign adapter
-        ListView lView = (ListView)getActivity().findViewById(R.id.tweet_list_view);
-        lView.setAdapter(adapter);
+        //ListView lView = (ListView)getActivity().findViewById(R.id.tweet_list_view);
+        //lView.setAdapter(adapter);
 
 
 
 
 
 // this code is a little closed - I'm going to rewrite it so that I can make a custom layout for each tweet
-//        TwitterSession session = TwitterCore.getInstance().getSessionManager().getActiveSession();
 
-//        UserTimeline userTimeline = new UserTimeline.Builder().screenName("eventswithred").maxItemsPerRequest(20).build();
         //Log.d(this, "The timeline has " +
 
 //        final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity())

@@ -16,10 +16,10 @@ import java.util.ArrayList;
  */
 
 public class customArrayAdapter extends BaseAdapter implements ListAdapter {
-    private ArrayList<String> list = new ArrayList<String>();
+    private ArrayList<redTweet> list = new ArrayList<redTweet>();
     private Context context;
 
-    public customArrayAdapter(ArrayList<String> list, Context context) {
+    public customArrayAdapter(ArrayList<redTweet> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -51,7 +51,7 @@ public class customArrayAdapter extends BaseAdapter implements ListAdapter {
 
         //Handle TextView and display string from your list
         TextView listItemText = (TextView)view.findViewById(R.id.list_item_string);
-        listItemText.setText(list.get(position));
+        listItemText.setText(list.get(position).getText());
 
         //Handle buttons and add onClickListeners
         Button retweetBtn = (Button)view.findViewById(R.id.retweet_btn);
