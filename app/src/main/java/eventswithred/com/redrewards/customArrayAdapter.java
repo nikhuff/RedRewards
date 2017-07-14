@@ -1,6 +1,7 @@
 package eventswithred.com.redrewards;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,16 +11,17 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Daniel on 7/13/2017.
  */
 
 public class customArrayAdapter extends BaseAdapter implements ListAdapter {
-    private ArrayList<redTweet> list = new ArrayList<redTweet>();
+    private List<redTweet> list = new ArrayList<redTweet>();
     private Context context;
 
-    public customArrayAdapter(ArrayList<redTweet> list, Context context) {
+    public customArrayAdapter(List<redTweet> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -45,13 +47,16 @@ public class customArrayAdapter extends BaseAdapter implements ListAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         View view = convertView;
         if (view == null) {
+            Log.d("customArrayAdapter", "Expanding the custom tweet layout");
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.custom_tweet_layout, null);
         }
 
         //Handle TextView and display string from your list
         TextView listItemText = (TextView)view.findViewById(R.id.list_item_string);
-        listItemText.setText(list.get(position).getText());
+        //listItemText.setText(list.get(position).getText());
+        String myString = "Hello World!";
+        listItemText.setText(myString);
 
         //Handle buttons and add onClickListeners
         Button retweetBtn = (Button)view.findViewById(R.id.retweet_btn);

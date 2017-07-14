@@ -4,6 +4,12 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonSyntaxException;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.models.Tweet;
+import com.twitter.sdk.android.tweetui.Timeline;
+import com.twitter.sdk.android.tweetui.UserTimeline;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +18,7 @@ import java.util.TreeMap;
 
 import twitter4j.Query;
 import twitter4j.QueryResult;
+import twitter4j.ResponseList;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -19,50 +26,59 @@ import twitter4j.TwitterFactory;
 import twitter4j.TwitterObjectFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
+import static java.lang.String.valueOf;
+
 /**
  * Created by Daniel on 7/13/2017.
  */
 
 
-public class TweetLoader extends AsyncTask <String, Void, Map> {
+public class TweetLoader extends AsyncTask <String, Void, List> {
     Twitter twitter;
+
+    Gson g = new Gson();
 
     public TweetLoader() {
         configureKeys();
     }
 
-    public Map myMap = new TreeMap<Integer, redTweet>();
+    public ResponseList myTweets;
+    public List tweets = new ArrayList<redTweet>();
 
     @Override
-    protected Map doInBackground(String... username) {
+    protected List doInBackground(String... username) {
         Log.d("tweetloader", "Beginning background tweet loading...");
 
-
         try {
-            List tweets = new ArrayList();
-            tweets = twitter.getUserTimeline(username[0]);
+            myTweets = twitter.getUserTimeline(username[0]);
 
-            Integer tweetIndex = 0;
+            int enumerator = 0;
+            for (Object tweet: myTweets) {
+                String jsonString = TwitterObjectFactory.getRawJSON(tweet);
 
-            for (Object item : tweets) {
-                String jsonString = TwitterObjectFactory.getRawJSON(item);
+                try {
+                    Tweet tempTweet = g.fromJson(jsonString, Tweet.class);
+                    redTweet tempRedTweet = new redTweet();
+                    tempRedTweet.setText(tempTweet.text);
+                    tweets.add(tempRedTweet);
+                } catch (JsonSyntaxException syntaxE) {
+                    Log.d("tweetloader", syntaxE.getMessage());
+                }
 
-                Gson g = new Gson();
-                redTweet rt = g.fromJson(jsonString, redTweet.class);
-
-                myMap.put(tweetIndex, rt);
-                tweetIndex += 1;
+                enumerator++;
             }
 
+            //add the json back in
+            Log.d("tweetloader", "Successfully loaded the tweets");
         } catch (TwitterException e) {
+            Log.d("tweetloader", "Exception thrown while loading tweets: " + e.getMessage());
             e.printStackTrace();
         }
-
-        return myMap;
+        return tweets;
     }
 
-    protected Map onPostExecute(Long result) {
-        return myMap;
+    protected List onPostExecute() {
+        return tweets;
     }
 
     public void configureKeys() {

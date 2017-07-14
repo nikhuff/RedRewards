@@ -30,6 +30,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
+import static java.lang.String.valueOf;
+
 public class TwitterTabFragment extends Fragment {
 
     public List tweets = new ArrayList();
@@ -54,39 +56,24 @@ public class TwitterTabFragment extends Fragment {
 
         TweetLoader tl = new TweetLoader();
         try {
-            Map <Integer, redTweet> myMap = tl.execute("eventswithred").get();
+            List <redTweet> tweets = tl.execute("eventswithred").get();
+            Log.d("twitterTabFragment", "The list 'tweets' has " + valueOf(tweets.size()) + " elements.");
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
 
-        //generate list
-        ArrayList<redTweet> list = new ArrayList<redTweet>();
-        //list.add(userTimeline.get(0));
-        //list.add("item2");
-
         //instantiate custom adapter
-        customArrayAdapter adapter = new customArrayAdapter(list, getActivity());
+        customArrayAdapter adapter = new customArrayAdapter(tweets, getActivity());
 
         //handle listview and assign adapter
-        //ListView lView = (ListView)getActivity().findViewById(R.id.tweet_list_view);
-        //lView.setAdapter(adapter);
-
-
-
-
-
-// this code is a little closed - I'm going to rewrite it so that I can make a custom layout for each tweet
-
-        //Log.d(this, "The timeline has " +
+        ListView lView = (ListView)getActivity().findViewById(R.id.tweet_list_view);
+        lView.setAdapter(adapter);
 
 //        final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity())
 //                .setTimeline(userTimeline)
 //                .build();
-
-//        ListView lv = (ListView) getActivity().findViewById(R.id.tweet_list_view);
-//        lv.setAdapter(adapter);
 
         loginButton = (TwitterLoginButton) getActivity().findViewById(R.id.twitter_login_button);
         loginButton.setCallback(new Callback<TwitterSession>() {

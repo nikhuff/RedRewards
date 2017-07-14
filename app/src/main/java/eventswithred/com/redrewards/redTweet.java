@@ -1,5 +1,7 @@
 package eventswithred.com.redrewards;
 
+import android.util.Log;
+
 import java.io.Serializable;
 
 /**
@@ -8,27 +10,26 @@ import java.io.Serializable;
 
 public class redTweet implements Serializable {
     //private twitter4j.User user;
+    private String user;
     private String text;
 
     public redTweet () {
     }
 
-    public redTweet (twitter4j.User user, String text) {
+    public String getUser() {
+        return user;
     }
 
-    //public twitter4j.User getUser() {
-//        return user;
-//    }
-
-//    public void setUser(twitter4j.User user) {
-//        this.user = user;
-//    }
+    public void setUser(String user) {
+        this.user = user;
+    }
 
     public String getText() {
         return text;
     }
 
     public void setText(String text) {
+        Log.d("redTweet", "The text of this redTweet object has been set to " + text);
         this.text = text;
     }
 }
