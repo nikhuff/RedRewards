@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,8 @@ import java.util.List;
 public class customArrayAdapter extends BaseAdapter implements ListAdapter {
     private List<redTweet> list = new ArrayList<redTweet>();
     private Context context;
+
+    private User user = User.getUserInstance();
 
     public customArrayAdapter(List<redTweet> list, Context context) {
         this.list = list;
@@ -65,6 +68,7 @@ public class customArrayAdapter extends BaseAdapter implements ListAdapter {
             public void onClick(View v) {
                 //do something
                 list.remove(position); //or some other task
+                user.earnRetweetPoints(context);
                 notifyDataSetChanged();
             }
         });

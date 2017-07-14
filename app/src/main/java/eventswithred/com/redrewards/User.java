@@ -1,5 +1,8 @@
 package eventswithred.com.redrewards;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,4 +59,9 @@ public class User {
     }
 
     public boolean canSubtract(int points) {return (this.points >= points);}
+
+    public void earnRetweetPoints(Context context) {
+        addPoints(10);
+        Toast.makeText(context, "Item: ", Toast.LENGTH_SHORT).show();
+    }
 }

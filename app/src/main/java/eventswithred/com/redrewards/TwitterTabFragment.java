@@ -53,9 +53,6 @@ public class TwitterTabFragment extends Fragment {
     public void onActivityCreated (Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        /*
-        TextView listItemText = (TextView)view.findViewById(R.id.list_item_string);*/
-
         ListView myListView = (ListView) getView().findViewById(R.id.tweet_list_view);
         ViewGroup.LayoutParams params = myListView.getLayoutParams();
         params.height = Resources.getSystem().getDisplayMetrics().heightPixels - 430;
@@ -82,10 +79,6 @@ public class TwitterTabFragment extends Fragment {
         ListView lView = (ListView)getActivity().findViewById(R.id.tweet_list_view);
 
         lView.setAdapter(adapter);
-
-//        final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity())
-//                .setTimeline(userTimeline)
-//                .build();
 
         loginButton = (TwitterLoginButton) getActivity().findViewById(R.id.twitter_login_button);
         loginButton.setCallback(new Callback<TwitterSession>() {
