@@ -62,6 +62,6 @@ public class User {
 
     public void earnRetweetPoints(Context context) {
         addPoints(10);
-        Toast.makeText(context, "Item: ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "You earned ten points for retweeting!", Toast.LENGTH_SHORT).show();
     }
 }
