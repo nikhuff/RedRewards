@@ -24,7 +24,7 @@ public class LogoutActivity extends AppCompatActivity {
     public void logout(View view) {
         mAuth.signOut();
         Toast.makeText(getApplicationContext(), "User successfully signed out", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivity(intent);
     }
