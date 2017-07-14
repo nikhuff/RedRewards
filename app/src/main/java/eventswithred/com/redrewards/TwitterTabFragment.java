@@ -1,5 +1,6 @@
 package eventswithred.com.redrewards;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -52,11 +53,21 @@ public class TwitterTabFragment extends Fragment {
     public void onActivityCreated (Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        /*
+        TextView listItemText = (TextView)view.findViewById(R.id.list_item_string);*/
+
+        ListView myListView = (ListView) getView().findViewById(R.id.tweet_list_view);
+        ViewGroup.LayoutParams params = myListView.getLayoutParams();
+        params.height = Resources.getSystem().getDisplayMetrics().heightPixels - 430;
+        myListView.setLayoutParams(params);
+        myListView.requestLayout();
+
         Log.d("twitterTabFragment", "Loading the tweets.");
+
 
         TweetLoader tl = new TweetLoader();
         try {
-            List <redTweet> tweets = tl.execute("eventswithred").get();
+            tweets = tl.execute("eventswithred").get();
             Log.d("twitterTabFragment", "The list 'tweets' has " + valueOf(tweets.size()) + " elements.");
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -69,6 +80,7 @@ public class TwitterTabFragment extends Fragment {
 
         //handle listview and assign adapter
         ListView lView = (ListView)getActivity().findViewById(R.id.tweet_list_view);
+
         lView.setAdapter(adapter);
 
 //        final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity())

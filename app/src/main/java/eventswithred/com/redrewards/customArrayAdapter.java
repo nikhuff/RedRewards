@@ -54,9 +54,8 @@ public class customArrayAdapter extends BaseAdapter implements ListAdapter {
 
         //Handle TextView and display string from your list
         TextView listItemText = (TextView)view.findViewById(R.id.list_item_string);
-        //listItemText.setText(list.get(position).getText());
-        String myString = "Hello World!";
-        listItemText.setText(myString);
+        listItemText.setText(list.get(position).getText());
+
 
         //Handle buttons and add onClickListeners
         Button retweetBtn = (Button)view.findViewById(R.id.retweet_btn);
