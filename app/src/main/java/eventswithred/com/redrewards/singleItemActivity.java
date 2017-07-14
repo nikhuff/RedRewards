@@ -46,6 +46,8 @@ public class singleItemActivity extends AppCompatActivity {
             if (user.canSubtract(SP.getCost()))
             {
                 user.subtractPoints(SP.getCost());
+                Toast.makeText(this, "" + SP.getCost() + " points has been removed from your account.", Toast.LENGTH_LONG).show();
+
             }
             else
             Toast.makeText(this, "not enough points", Toast.LENGTH_LONG).show();

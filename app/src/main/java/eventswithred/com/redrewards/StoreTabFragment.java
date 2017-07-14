@@ -61,7 +61,6 @@ public class StoreTabFragment extends ListFragment implements AdapterView.OnItem
         viewItem.putExtra("product", productList.get(position));
         Log.d("intent_creation", "item possibly placed...starting activity...");
         startActivity(viewItem);
-        //Toast.makeText(getActivity(), "Item: " + productList.get(position).getTitle(), Toast.LENGTH_SHORT).show();
     }
 }
 

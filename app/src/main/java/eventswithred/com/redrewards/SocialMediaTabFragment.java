@@ -44,9 +44,9 @@ public class SocialMediaTabFragment extends Fragment {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new FacebookTabFragment();
-                default:
                     return new TwitterTabFragment();
+                default:
+                    return new FacebookTabFragment();
             }
 
         }
@@ -62,9 +62,9 @@ public class SocialMediaTabFragment extends Fragment {
 
             switch (position) {
                 case 0:
-                    return "Facebook";
-                default:
                     return "Twitter";
+                default:
+                    return "Facebook";
             }
         }
 
