@@ -55,7 +55,7 @@
     <string name="points_how_to_get">how to get points:\nAttend Events\nrepost a post on social media</string>
     <string name="points_amount_display">points:</string>
     <string name="earn_points">Earn Points</string>
-    <string name="lblUserName"><![CDATA[<username>]]></string>
+    <string name="lblUserName">You are signed out!</string>
 
 
 </resources>

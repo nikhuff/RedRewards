@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.Twitter;
@@ -34,6 +35,8 @@ import java.util.concurrent.ExecutionException;
 import static java.lang.String.valueOf;
 
 public class TwitterTabFragment extends Fragment {
+
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     public List tweets = new ArrayList();
 

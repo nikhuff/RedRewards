@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import static android.view.View.INVISIBLE;
+
 public class PointsTabFragment extends Fragment {
 
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -36,13 +38,17 @@ public class PointsTabFragment extends Fragment {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         View v = this.getView();
         TextView pointsDisplay = (TextView) v.findViewById(R.id.tvPointsDisplay);
+        TextView userName = (TextView) v.findViewById(R.id.tvUserName);
         if (currentUser != null) {
             //a user is already logged in
+            userName.setText(currentUser.getEmail());
+            pointsDisplay.setVisibility(View.VISIBLE);
             pointsDisplay.setText("POINTS: " + points);
             Log.d("nodisplay", mAuth.getCurrentUser().getEmail() + " is already logged in!");
         } else {
             //pointsDisplay.setText("Log in to see your points");
             Log.d("nodisplay", "No user is logged in yet!");
+            pointsDisplay.setVisibility(INVISIBLE);
         }
     }
 
@@ -50,6 +56,11 @@ public class PointsTabFragment extends Fragment {
     public void onPause() {
         super.onPause();
         points = user.getPoints();
+        display();
+    }
+
+    public void onResume() {
+        super.onResume();
         display();
     }
 
